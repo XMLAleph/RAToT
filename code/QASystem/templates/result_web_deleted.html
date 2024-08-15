@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./static/font_4510329_noi7xjfgj9/iconfont.css">
+        <link rel="stylesheet" href="{{url_for('static', filename = 'css/result.css') }}">
+        <meta charset="UTF-8">
+        <title>查询结果-{{ search_query }}</title>
+    </head>
+    
+    <body class="bod2">
+        
+        <div class="searchsourceicon-respage" style="text-align:center;">
+            <i class="iconfont" style="font-size: 20px;color:#ffffff;">
+                &#xe89d;
+            </i>
+        </div>
+        
+        <div class="llmgeneratoricon-respage" style="text-align:center;">
+            <i class="iconfont" style="font-size: 24px;color:#ffffff;">
+                &#xeb62;
+            </i>
+        </div>
+        
+        <div class="modeicon-respage" style="text-align:center;">
+            <i class="iconfont" style="font-size: 18px;color:#ffffff;">
+                &#xe652;
+            </i>
+        </div>
+        
+        <div class="sys-configs-respage">
+            <select class="searchsource-respage" name="menu4searchsource" id="menu4setting1" form="box4search-respage">
+                <option value="local_hotpotqa">wikipedia-HotpotQA</option>
+                <option value="local_2wikimultihopqa">wikipedia-2WikiMQA</option>
+                <option value="local_musique">wikipedia-MuSiQue</option>
+                <option value="web_google" selected>Google</option>
+                <option value="web_bing">Bing</option>
+            </select>
+    
+            <select class="llmgenerator-respage" name="menu4llmgenerator" id="menu4setting2" form="box4search-respage">
+                <option value="gpt-3.5-turbo-instruct" selected>gpt-3.5-turbo-instruct</option>
+            </select>
+        
+            <select class="mode-respage" name="menu4mode" id="menu4setting3" form="box4search-respage">
+                <option value="ircot" selected>IRCoT</option>
+                <option value="scircot">Sc-IRCoT</option>
+                <option value="ragot">RAGoT</option>
+            </select>
+        </div>
+        
+        <select class="queryid" name="id4query" id="id4verify1" form="box4search-respage">
+            <option value="{{ temp_id }}" selected>temp_id</option>
+        </select>
+        
+        <form class="example" id="box4search-respage" action="{{ url_for('search') }}" method="get">
+            <div class="search-box">
+                <input class="search-text" name="inputs" value="{{ search_query }}">
+    		    <button type="submit" class="search-btn" id="btn">
+                	<i class="iconfont" style="font-size: 25px">&#xeb62;</i>
+                </button>
+            </div>
+        </form>
+        
+        <div class="answer4query">
+    		<p class="search-answer"><b>{{ search_answer }}</b></p>
+    		<p class="search-reason-chain">{{ answer_chain }}</p>
+		</div>
+		
+		<div id="results" class="docs4query">
+            {% for doc in search_docs %}
+            <a href="{{ doc[2] }}">
+                <button class="search-item">{{ doc[0] }}</button>
+            </a>
+            {% endfor %}
+        </div>
+        
+        <div class="pagination_part">
+            {{ current_page.links }}
+        </div>
+        
+	</body>
+    
+</html>

@@ -1,0 +1,50 @@
+.bod3 {
+    background: linear-gradient(to left, #e0c3fc, #8ec5fc);
+}
+
+.detail-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.corpus {
+    position: absolute;
+    font-size: 15px;
+    border-radius: 20px;
+    top: 15%;
+    left: 30%;
+    background: #ffffff;    
+    color: #000000;
+    padding: 8px;
+}
+
+.title {
+    position: absolute;
+    font-size: 15px;
+    border-radius: 20px;
+    top: 15%;
+    left: 50%;
+    background: #ffffff;    
+    color: #000000;
+    padding:8px;
+}
+
+.para {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    margin-top: 60px;
+    width: 600px;
+    border: 0px;
+    border-radius: 20px;
+    background: #ffffff;    
+    color: #000000;
+    font-size: 15px;
+    padding: 20px;
+}
+
+.para-content {
+    text-align: left;
+}

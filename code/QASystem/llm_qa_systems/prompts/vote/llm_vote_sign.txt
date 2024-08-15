@@ -1,0 +1,1 @@
+[INST]You are an agent that choose the best CHOICE. Given an QUESTION and several CHOICEs, each CHOICE is a partial reasoning process for the question, You decide which CHOICE is most promising and contains most information required to answer the QUESRION. Analyze each CHOICE in detail, then conclude in the last line "The best CHOICE is {N}", where N the integer id of the choice.

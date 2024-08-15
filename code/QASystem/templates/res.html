@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <title>查询结果</title>
+      <style>
+          .relevant {
+              border: 2px solid #880000;
+              padding: 10px 40px;
+              width: 300px;
+              border-radius: 25px;
+              position: absolute;
+              right:80px;
+              top:200px;
+          }
+      </style>
+      <link rel="stylesheet" href="{{url_for('static', filename = 'css/res.css') }}">
+    </head>
+    
+    <body>
+        <div class="relevant">
+            <p><font color="#880000">相关搜索</font></p>
+            {% for relevant_key in relevant_keys %}
+                <p>
+                  <a style="text-decoration:none;" href="{{ relevant_key['url'] }}">{{ relevant_key['query'] }}</a>
+                  <br/>
+                  <hr style="width: 280px">
+                </p>
+            {% endfor %}
+            <p>
+              <a style="text-decoration:none;" href="{{ single_relevant_key['url'] }}">{{ single_relevant_key['query'] }}</a>
+              <br/>
+            </p>
+        </div>
+        
+        <div style="position: absolute; left: 6%; bottom: 10%;">
+            <p>查询结果: {{ key }}</p>
+            <br>
+            <div id="page1" style="display:block;">
+                {% for res in results_page1 %}
+                <p>
+                  <a href="{{ res['url'] }}"><font size="3">{{ res['title'] }}</font></a>
+                  <br/>
+                  <a href="{{ res['url'] }}">{{ res['url'] }}</a>
+                  <br/>
+                  <br/>
+                </p>
+                {% endfor %}
+            </div>
+            
+            <div id="page2" style="display:none;">
+                {% for res in results_page2 %}
+                <p>
+                  <a href="{{ res['url'] }}"><font size="3">{{ res['title'] }}</font></a>
+                  <br/>
+                  <a href="{{ res['url'] }}">{{ res['url'] }}</a>
+                  <br/>
+                  <br/>
+                </p>
+                {% endfor %}
+            </div>
+            
+            <div id="page3" style="display:none;">
+                {% for res in results_page3 %}
+                <p>
+                  <a href="{{ res['url'] }}"><font size="3">{{ res['title'] }}</font></a>
+                  <br/>
+                  <a href="{{ res['url'] }}">{{ res['url'] }}</a>
+                  <br/>
+                  <br/>
+                </p>
+                {% endfor %}
+            </div>
+            
+            <div id="page4" style="display:none;">
+                {% for res in results_page4 %}
+                <p>
+                  <a href="{{ res['url'] }}"><font size="3">{{ res['title'] }}</font></a>
+                  <br/>
+                  <a href="{{ res['url'] }}">{{ res['url'] }}</a>
+                  <br/>
+                  <br/>
+                </p>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!--这里showpage就和首页的相关搜索功能比较相似-->
+        <!--所以理论上现在的实现方法是可行的，但不知道为什么不生效-->
+        <ul class="pagination" style="position: absolute; bottom: 5%;">
+            <li><a href="javascript:;">«</a></li>
+            <li><a href="javascript:showpage(1);">1</a></li>
+            <li><a href="javascript:showpage(2);">2</a></li>
+            <li><a href="javascript:showpage(3);">3</a></li>
+            <li><a href="javascript:showpage(4);">4</a></li>
+            <li><a href="javascript:;">»</a></li>
+        </ul>
+        
+    </body>
+    
+    <script type="text/javascript" src="/static/js/res.js"></script>
+	
+</html>

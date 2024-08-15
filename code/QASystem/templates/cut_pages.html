@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./static/font_4510329_ehavoechj26/iconfont.css">
+        <meta charset="UTF-8">
+        <title>分页展示</title>
+        <style>
+            ul.pagination li a {
+                border: 0px;
+                color: red;
+            }
+            ul.pagination li span {
+    			border: 0px;
+    			color: green;
+    		}
+        </style>
+    </head>
+
+    <body>
+        <div align="center">
+            <h2>用户信息</h2>
+            <br><br>
+            {% for cu in slicontent %}
+                编号：{{ cu[0] }}，姓名：{{ cu[1] }} }}    <br><br>
+            {% endfor %}
+            
+            {{ current_page.links }}	{# 分页栏 #}
+            
+            共有{{ total_page }}条数据
+
+        </div>
+    </body>
+</html>

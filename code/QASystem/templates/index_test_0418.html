@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="./static/font_4510329_ehavoechj26/iconfont.css">
+		<link rel="shortcut icon" href="#" />
+		<link rel="stylesheet" href="{{url_for('static', filename = 'css/index.css') }}">
+	</head>
+
+    <body>
+		<center>
+    		<form action="{{ url_for('search') }}" method="post">
+                <div class="search-box">
+      		        <input class="search-txt" type="text" id="question" name="key" placeholder="请输入您的问题..."/>
+      		        <botton class="search-btn" type="submit" id="btn"><i class="iconfont" style="color: #ffffff;font-size: 35px;pointer-events: none;">&#xeb62;</i></button>   
+                </div>
+            </form>
+		</center>
+
+	</body>
+    
+</html>

@@ -1,0 +1,67 @@
+body {
+    background-color: #000000; /* 浏览器不支持时显示 */
+    background-image: linear-gradient(#a6c0fe, #f68084);
+}
+
+.search {
+	width: 100%;
+	position: relative;
+	display: flex;
+}
+	
+.search-box{
+	width: 30%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+	
+.search-box { 
+    /*把这部分放到search-txt和btn的属性里？*/
+    height: 40px;
+    background: #ffffff;
+    border: 10px;
+    border-radius: 40px;
+    padding: 10px;
+    opacity: 0;
+}
+
+.search-txt {
+    
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: #880000;
+	font-size: 16px;
+	line-height: 50px;
+	width: 0px;
+}
+
+.searchTerm {
+	  width: 100%;
+	  border: 3px solid #00B4CC;
+	  border-right: none;
+	  padding: 5px;
+	  height: 20px;
+	  border-radius: 5px 0 0 5px;
+	  outline: none;
+	  color: #9DBFAF;
+	}
+	
+.search-btn {
+	font-size: 25px;
+	color: #880000;
+	float: right;
+	width: 40px;
+	height: 40px;	
+	border: 10px;
+	border-radius: 50%;
+	background: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}

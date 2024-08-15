@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/font_4510329_noi7xjfgj9/iconfont.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/testajax.css') }}">
+    <script src="https://cdn.staticfile.net/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function updateData(run_time) {
+            $.ajax({
+                url: '/update',
+                type: 'POST',
+                data: {'qd_run_time':run_time},
+                success: function(response) {
+                    var allresult=document.getElementsByClassName("search-results")[0];
+                    
+                    var qabtn=document.getElementsByClassName("search-qa")[0];
+                    var abtn=document.getElementsByClassName("search-answer")[0];
+                    
+                    if (response['tag'] == 0) {
+                        var btn=document.createElement("button");
+                        var text=document.createTextNode(response['content']);
+                        btn.appendChild(text);
+                        btn.className = "search-item";
+                        allresult.insertBefore(btn, qabtn);
+                    }
+                    else if (response['tag'] == 1) {
+                        abtn.innerHTML = abtn.innerText+response['content'];
+                    }
+                    
+                    if (run_time < 6 && response['done'] == 0) {
+                        updateData(run_time+1);
+                    }
+                }
+            });
+        };
+        
+        $(function() {
+            updateData(1);
+        });
+    </script>
+</head>
+
+<body class="bod2">
+    <p></p>
+    <div class="search-results">
+        <button class="search-qa">
+        <!--后面后端返回推理过程时，就修改这部分的文本内容（追加写，看下怎么从空文本开始 不从空文本开始，把问题作为初始文本-->
+            <p class="search-question">
+        		Q: {{ search_query }}
+        	</p>
+    		<p class="search-answer">
+    		<!--现在主要是不清楚这部分会怎么显示-->
+        	</p>
+        </button>
+    </div>
+    <!--button onclick="updateData()">更新数据</button-->
+</body>
+</html>

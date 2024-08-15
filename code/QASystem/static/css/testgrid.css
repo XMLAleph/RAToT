@@ -1,0 +1,246 @@
+.bod2 {
+    background: #a6c1ee;
+    background: linear-gradient(to left, #fbc2eb, #a6c1ee) !important;
+}
+
+.searchsourceicon-respage {
+    display: inline-block;
+    position: absolute;
+	top: 16.2%;
+	left: 11%;
+}
+
+.llmgeneratoricon-respage {
+    display: inline-block;
+    position: absolute;
+	top: 15.9%;
+	left: 25.6%;
+}
+
+.modeicon-respage {
+    display: inline-block;
+    position: absolute;
+	top: 16.3%;
+	left: 40.8%;
+}
+
+.sys-configs-respage {
+    position: absolute;
+    top: 16%;
+    left: 13%;
+}
+
+.searchsource-respage {
+    font-size: 12px;
+    border-radius: 20px;
+    border: 0px;
+    display: inline-block;
+    margin-right: 90px;
+}
+
+.llmgenerator-respage {
+    font-size: 12px;
+    border-radius: 20px;
+    border: 0px;
+    display: inline-block;
+    margin-right: 90px;
+}
+
+.mode-respage {
+    font-size: 12px;
+    border-radius: 20px;
+    border: 0px;
+    display: inline-block;
+}
+
+.new-queryid {
+    display: none;
+}
+
+.search-queryid-value {
+    display: none;
+}
+
+.search-source-value {
+    display: none;
+}
+
+.search-generator-value {
+    display: none;
+}
+
+.search-mode-value {
+    display: none;
+}
+
+.search-box {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search-btn {
+    float: right;
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+	background: linear-gradient(to left, #fccb90, #d57eeb);
+}
+
+.search-text {
+    width: 800px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding-left: 20px;
+    color: black;
+    font-size: 18px;
+    font-family: "Microsoft YaHei UI Light";
+}
+
+.search-results {
+    position: absolute;
+    top: 22%;
+    left: 10%;
+    bottom: 10%;
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: 2fr 3fr;
+    grid-gap: 40px;
+    padding: 0px;
+    height: 570px;
+    width: 1200px;
+}
+
+.search-answer {
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 0px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.answer-title {
+    height: 20%;
+    margin-bottom: 10px;
+}
+
+.answer-title i{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.answer-title p{
+    display: inline-block;
+    font-size: 20px;
+}
+
+.answer-content {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    overflow-x: auto;
+    height: 72%;
+}
+
+.answer-loading {
+    text-align: center;
+    padding-top: 25px;
+    font-size: 25px;
+}
+
+.answer-text {
+    text-align:left;
+    padding-left:20px;
+    font-size: 30px;
+}
+
+.reasonchain-text {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.search-docs {
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 0px;
+    text-align: center;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.docs-title {
+    height: 15%;
+}
+
+.docs-title i{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.docs-title p{
+    display: inline-block;
+    font-size: 20px;
+}
+
+.docs-loading {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;
+}
+
+.docs-content {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    overflow-x: auto;
+    height: 80%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.search-process {
+    background-color: #ffffff;
+    border: 0px;
+    border-radius: 15px;
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    text-align: center;
+    overflow: hidden;
+}
+
+.process-title {
+    height: 5%;   
+}
+
+.process-title i{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.process-title p{
+    display: inline-block;
+    font-size: 20px;
+}
+
+.process-content {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+    text-align: left;
+    overflow-x: auto;
+    height: 90%;
+    font-size: 18px;
+}

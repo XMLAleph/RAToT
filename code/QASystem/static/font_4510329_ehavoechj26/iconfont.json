@@ -1,0 +1,37 @@
+{
+  "id": "4510329",
+  "name": "qa sys",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1131",
+      "name": "资料库",
+      "font_class": "ziliaoku",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1766276",
+      "name": "操作-搜索",
+      "font_class": "sousuo",
+      "unicode": "e678",
+      "unicode_decimal": 59000
+    },
+    {
+      "icon_id": "5387814",
+      "name": "机器人_o",
+      "font_class": "jiqiren_o",
+      "unicode": "eb62",
+      "unicode_decimal": 60258
+    },
+    {
+      "icon_id": "38419673",
+      "name": "icon-大模型",
+      "font_class": "icon-damoxing",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    }
+  ]
+}

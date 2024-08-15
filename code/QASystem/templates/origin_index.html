@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+		<style>
+			    .search-box {
+ 			        font-family: FontAwesome;
+ 			        position: absolute;
+ 			        top: 40%;
+ 			        left: 50%;
+ 			        transform: translate(-50%, -50%);
+ 			        background: #ffffff;
+ 			        height: 40px;
+ 			        border: 10px;
+ 			        border-radius: 40px;
+ 			        padding: 10px;
+ 			        opacity: 0;
+ 			        transition-delay: 99999999s;
+  			        transition-duration: 1s;
+ 			    }
+			
+			    .search-box:hover>.search-txt {
+			        width: 240px;
+			        padding: 0 6px;
+			    }
+			
+			    .search-box:hover>.search-btn {
+			        color: white;
+			        background: #880000;
+			    }
+			
+			    .search-btn {
+			        transition: 0.5s;
+			        font-family: FontAwesome;
+			        font-size: 25px;
+			        color: #880000;
+			        float: right;
+			        width: 40px;
+			        height: 40px;	
+			        border: 10px;
+			        border-radius: 50%;
+			        background: #ffffff;
+			        display: flex;
+			        justify-content: center;
+			        align-items: center;
+			        text-decoration: none;
+			    }
+			
+			    .search-txt {
+			        border: none;
+			        background: none;
+			        outline: none;
+			        float: left;
+			        padding: 0;
+			        color: #880000;
+			        font-size: 16px;
+			        transition: 0.6s;
+			        line-height: 50px;
+			        width: 0px;
+			    }
+			   
+			    @keyframes flash {
+			        50% {
+			            transform: scale(1.5);
+			        }
+			
+			        80% {
+			            transform: rotate(-60deg);
+			        }
+			
+			        100% {
+			            transform: rotate(30deg);
+			        }
+			        
+			        
+			    }
+			    html:hover .search-box {
+			        opacity: 1;
+			        transition-delay: 0s;
+			        transition-duration: 0s;
+			    }
+			    
+			    a {
+    			    text-decoration:none;
+			    }
+			    
+			    .navigation {
+    			    background-color: #880000;
+    			    border: 2px solid #880000;
+                    padding: 20px;
+                    width: 100px;
+                    border-radius: 30px;
+                    
+			    }
+			    
+				
+		</style>
+		<link rel="stylesheet" href="{{url_for('static', filename = 'css/index.css') }}">
+	</head>
+    
+    <body style="background-color: white;">
+		<center>
+    		<form action="query" method="get">
+		    <div class="search-box">
+    		        <input class="search-txt" type='text' id='inp' name='key' placeholder="请输入搜索内容..."/>
+    		        <botton class="search-btn" type='submit' id='btn'> <i class='fas fa-search'></i></button>   
+		    </div>
+		    </form>
+		</center>
+		<center>
+    		<a class="navigation" href="http://rucfd.ruc.edu.cn" style="position: absolute;bottom:200px;left:300px"><font color="white">人大VPN</font></a>
+    		<a class="navigation" href="https://www.ruc.edu.cn" style="position: absolute;bottom:200px;left:550px"><font color="white">人大主页</font></a>
+    		<a class="navigation" href="https://v.ruc.edu.cn/" style="position: absolute;bottom:200px;right:580px"><font color="white">微人大</font></a>
+    		<a class="navigation" href="https://obe.ruc.edu.cn" style="position: absolute;bottom:200px;right:310px"><font color="white">obe</font></a>
+		</center>
+	</body>
+
+</html>

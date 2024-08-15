@@ -1,0 +1,42 @@
+
+2hop__435184_67370
+When does real time with the pizza man cast member start again in 2018?
+TAs: ["Pizza Man", "Snappy Tomato Pizza", "It's That Man Again (film)", "Starting Time", "Sicilian pizza", "Alleycat's Pizza"]
+TAs: There is no information available about a cast member of Pizza Man appearing on the show Real Time in 2018.; There is no information available about a show called "Real Time with the Pizza Man" or a cast member associated with it.; I'm sorry, I cannot answer this question as it is not related to the given Wikipedia article.; I'm sorry, I cannot answer this question as it is not related to the given Wikipedia title.; There is no information available about a show or cast member called "Pizza Man" or "Real Time with the Pizza Man."; There is no information available about a show called "Real Time with the Pizza Man" or a cast member associated with it.
+V: The best CHOICE is 3; The best CHOICE is 3; "The best CHOICE is 3"; The best CHOICE is 3; The best CHOICE is 3; The best CHOICE is 3
+A: ["It's That Man Again (film)"]
+A: I'm sorry, I cannot answer this question as it is not related to the given Wikipedia article.
+A: Exit? No.
+TAs: ["Congratulations I'm Sorry", "Spanish Wikipedia", "Wikipedia", "Armenian Wikipedia", "Saying Sorry", "I Can See Clearly Now"]
+TAs: ; ; ; ; ; 
+V: "I don't know"; I don't know; I don't know; I don't know; I don't know; I don't know
+A: ["It's That Man Again (film)", "Congratulations I'm Sorry", "Spanish Wikipedia", "Wikipedia", "Armenian Wikipedia", "Saying Sorry", "I Can See Clearly Now"]
+A: I'm sorry, I cannot answer this question as it is not related to the given Wikipedia article. 
+A: ["pid___4076abc225a7ee03e9bb1e07c768ad5b___ae1af6d55fd1f25926bb13c2f36961df", "pid___93c467b3f413e7932839d6376facdc72___eaed249dbb9cee07bbccbb4b667b3b45", "pid___e0570dc0c8da9dcd55b6287dedb74c95___f9363baebbc3cd7add6c17736138ddca", "pid___12672e79b01e9ca7018105efb0ef871c___acd334c259b09e27ac918b09c3678d1f", "pid___9ea02bc44c8976f168022a169be6cb79___7beb3d320030e31fe7e5bd60f8902609", "pid___8f16a18fca93735a2140def7e6ef8156___0efc65be9a6acbacb4e2d5982f5352a9", "pid___d8654a27c31b3cce369cc6ab3775c11d___ef7403f3c6104dc042926e27181b22b3"]
+Q: When does real time with the pizza man cast member start again in 2018?
+A: "There is no information about a show called \"Real Time with the Pizza Man\" or a cast member associated with it. Therefore, it is not possible to determine when it would start again in 2018."
+A: There is no information about a show called \"Real Time with the Pizza Man\" or a cast member associated with it. Therefore, it is not possible to determine when it would start again in 2018
+Q: [EOQ]
+S: 0.0
+GroundTruth: ('January 19, 2018',)
+
+3hop1__128554_39743_24526
+What is the average winter daytime temperature in the region where Richmond is found, in the state where WIRR operates?
+TAs: ["North Carolina", "Richmond, Virginia", "Alaska", "Winter", "WIRR", "Bucharest"]
+TAs: Richmond is located in the state of Virginia.; Richmond is located in the state of Virginia.; The region where Richmond is found is in the state of Virginia.; The average winter daytime temperature in Richmond, Virginia (where WIRR operates) is around 50°F (10°C).; WIRR operates in Virginia, Minnesota.; The region where Richmond is found is in the state of Virginia.
+V: The best CHOICE is 4; The best CHOICE is 4; The best CHOICE is 4; "The best CHOICE is 4"; The best CHOICE is 4; The best CHOICE is 4
+A: ["Winter"]
+A: The average winter daytime temperature in Richmond, Virginia (where WIRR operates) is around 50°F (10°C).
+A: Exit? No.
+TAs: ["Richmond, Virginia", "North Carolina", "Philadelphia", "New York City", "Climate of California", "Bucharest"]
+TAs: ; ; ; ; ; 
+V: The best CHOICE is 1; The best CHOICE is 1; The best CHOICE is 1; The best CHOICE is 1; The best CHOICE is 1; The best CHOICE is 1
+A: ["Winter", "Richmond, Virginia"]
+A: The average winter daytime temperature in Richmond, Virginia (where WIRR operates) is around 50°F (10°C). 
+A: ["pid___f6432274349b5cb93433f8ed886a3f37___9417d484ef44553d44cf2363ca1ed8fa", "pid___e295380251af4fed80e8d6d27fda799b___c714292c564588736e7098d0de418eab"]
+Q: What is the average winter daytime temperature in the region where Richmond is found, in the state where WIRR operates?
+A: "Richmond is located in the state of Virginia. The average winter daytime temperature in Virginia is around 50\u00b0F (10\u00b0C). WIRR operates in Virginia, so the answer is: 50\u00b0F (10\u00b0C)."
+A: 50\u00b0F (10\u00b0C)
+Q: [EOQ]
+S: 0.0
+GroundTruth: ('upper 40s–lower 50s °F',)

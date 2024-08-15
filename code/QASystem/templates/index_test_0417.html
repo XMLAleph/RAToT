@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="./static/font_4510329_ehavoechj26/iconfont.css">
+		<link rel="shortcut icon" href="#" />
+		<link rel="stylesheet" href="{{url_for('static', filename = 'css/index_test_0417.css') }}">
+	</head>
+
+    <body>
+    
+        <!--带按钮的搜索框-->
+        <form class="example" action="{{ url_for('search') }}" method="post">
+        	<div class="search-box">
+        	   <div class="search">
+        		  <input type="search-txt" class="searchTerm" placeholder="你想找什么?">
+        		  <button type="submit" class="search-btn" id="btn">
+        			<i class="iconfont" style="color: #ffffff;font-size: 35px;pointer-events: none;">&#xeb62;</i>
+        		 </button>
+        	   </div>
+        	</div>
+        </form>
+        
+	</body>
+    
+</html>

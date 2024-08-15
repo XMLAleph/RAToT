@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ 
+    <head>
+        <meta charset="utf-8">
+        <title> 问答系统 </title>
+        <link rel="stylesheet" href="./static/font_4510329_noi7xjfgj9/iconfont.css">
+        <link rel="shortcut icon" href="#" />
+        <link rel="stylesheet" href="{{url_for('static', filename = 'css/index.css') }}">
+    </head>
+     
+    <body class="bod1">
+        
+        <div class="logo">
+            <i class="iconfont" style="font-size: 75px;color:#ffffff;">
+                &#xe850;
+            </i>
+            <p class="logo-name" style="font-size: 60px;color:#ffffff;">
+                <b>Search&Reasoning</b>
+            </p>
+        </div>
+        
+        <div class="searchsourceicon" style="text-align:center;">
+            <i class="iconfont" style="font-size: 30px;color:#ffffff;">
+                &#xe89d;
+            </i>
+            <span class="searchsourceintro">Knowledge Base from which the system retrieve documents to answer your query. Our system supports two kinds of knowledge base, incude local knowledge base and web (google and Bing)</span>
+        </div>
+        
+        <div class="llmgeneratoricon" style="text-align:center;">
+            <i class="iconfont" style="font-size: 36px;color:#ffffff;">
+                &#xeb62;
+            </i>
+            <span class="llmgeneratorintro">llmgenerator from which the system retrieve documents to answer your query. Our system supports two kinds of knowledge base, incude local knowledge base and web (google and Bing)</span>
+        </div>
+        
+        <div class="modeicon" style="text-align:center;">
+            <i class="iconfont" style="font-size: 28px;color:#ffffff;">
+                &#xe652;
+            </i>
+            <span class="modeintro">mode from which the system retrieve documents to answer your query. Our system supports two kinds of knowledge base, incude local knowledge base and web (google and Bing)</span>
+        </div>
+        
+        <div class="sys-configs">
+            
+            <select class="searchsource" name="menu4searchsource" id="menu4setting1" form="box4search">
+                <option value="local_hotpotqa" disabled>wikipedia-HotpotQA</option>
+                <option value="local_2wikimultihopqa">wikipedia-2WikiMQA</option>
+                <option value="local_musique">wikipedia-MuSiQue</option>
+                <option value="web_google" selected>Google</option>
+                <option value="web_bing">Bing</option>
+            </select>
+            
+            <select class="llmgenerator" name="menu4llmgenerator" id="menu4setting2" form="box4search">
+                <option value="gpt-3.5-turbo-instruct" selected>gpt-3.5-turbo-instruct</option>
+            </select>
+            
+            <select class="mode" name="menu4mode" id="menu4setting3" form="box4search">
+                <option value="ircot" selected>IRCoT</option>
+                <option value="scircot">Sc-IRCoT</option>
+                <option value="ragot">RAGoT</option>
+            </select>
+        </div>
+        
+        <select class="queryid" name="id4query" id="id4verify1" form="box4search">
+            <option value="{{ temp_id }}" selected>temp_id</option>
+        </select>
+        
+        <form class="example" id="box4search" action="{{ url_for('search') }}" method="get">
+            <div class="search-box">
+                <input class="search-text" name="inputs" placeholder="Ask me anything you wonder!" >
+    		    <button type="submit" class="search-btn" id="btn">
+                	<i class="iconfont" style="font-size: 35px">&#xeb62;</i>
+                </button>
+                
+            </div>
+        </form>
+        
+        <!--button也有form属性，可以绑定form-->
+        <div class="recommendquery">
+            <button class="recommendsearch1" onclick="start_a_search_1()">{{ recommend_querys[0] }}</button>
+        
+            <button class="recommendsearch2" onclick="start_a_search_2()">{{ recommend_querys[1] }}</button>
+        </div>
+        
+        <script>
+            var query_from_inputs = document.getElementsByClassName("search-text");
+            var recommend_query_item_1 = document.getElementsByClassName("recommendsearch1");
+            var recommend_query_item_2 = document.getElementsByClassName("recommendsearch2");
+            function start_a_search_1() {
+                query_from_inputs[0].value = recommend_query_item_1[0].innerHTML;
+            };
+            function start_a_search_2() {
+                query_from_inputs[0].value = recommend_query_item_2[0].innerHTML;
+            };
+        </script>
+    
+</body>
+ 
+</html>

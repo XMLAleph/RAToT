@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./static/font_4510329_7v0hh5c10hk/iconfont.css">
+        <link rel="stylesheet" href="{{url_for('static', filename = 'css/testgrid.css') }}">
+        <script src="https://cdn.staticfile.net/jquery/3.7.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <title>查询结果-{{ search_query }}</title>
+        <script>
+        </script>
+    </head>
+    <body class="bod2">
+        <div class="searchsourceicon-respage" style="text-align:center;">
+            <i class="iconfont" style="font-size: 20px;color:#ffffff;">
+                &#xe89d;
+            </i>
+        </div>
+
+        <div class="llmgeneratoricon-respage" style="text-align:center;">
+            <i class="iconfont" style="font-size: 24px;color:#ffffff;">
+                &#xeb62;
+            </i>
+        </div>
+
+        <div class="modeicon-respage" style="text-align:center;">
+            <i class="iconfont" style="font-size: 18px;color:#ffffff;">
+                &#xe652;
+            </i>
+        </div>
+
+        <div class="sys-configs-respage">
+            <select class="searchsource-respage" name="menu4searchsource" id="menu4setting1" form="box4search-respage">
+                <option value="local_hotpotqa" disabled>wikipedia-HotpotQA</option>
+                <option value="local_2wikimultihopqa">wikipedia-2WikiMQA</option>
+                <option value="local_musique">wikipedia-MuSiQue</option>
+                <option value="web_google" selected>Google</option>
+                <option value="web_bing">Bing</option>
+            </select>
+
+            <select class="llmgenerator-respage" name="menu4llmgenerator" id="menu4setting2" form="box4search-respage">
+                <option value="gpt-3.5-turbo-instruct" selected>gpt-3.5-turbo-instruct</option>
+            </select>
+
+            <select class="mode-respage" name="menu4mode" id="menu4setting3" form="box4search-respage">
+                <option value="ircot" selected>IRCoT</option>
+                <option value="scircot" disabled>Sc-IRCoT</option>
+                <option value="ragot" disabled>RAGoT</option>
+            </select>
+        </div>
+
+        <select class="new-queryid" name="id4query" id="id4verify1" form="box4search-respage">
+            <option value="{{ temp_id }}" selected>temp_id</option>
+        </select>
+        
+        <button class="search-queryid-value" value="{{ query_id }}">
+        </button>
+        
+        <button class="search-source-value" value="{{ search_source }}">
+        </button>
+        
+        <button class="search-generator-value" value="{{ search_generator }}">
+        </button>
+        
+        <button class="search-mode-value" value="{{ search_mode }}">
+        </button>
+        
+        <form class="example" id="box4search-respage" action="{{ url_for('search') }}" method="get">
+            <div class="search-box">
+                <input class="search-text" name="inputs" value="{{ search_query }}">
+          <button type="submit" class="search-btn" id="btn">
+                	<i class="iconfont" style="font-size: 25px">&#xeb62;</i>
+                </button>
+            </div>
+        </form>
+        
+        <div class="search-results">
+            <div class="search-answer">
+                <div class="answer-title">
+                    <i class="iconfont" style="font-size: 24px;color:#000000;">
+                        &#xe805;
+                    </i>
+                    <p class="answertitle-text">
+                        <b>Query Answer</b>
+                    </p>
+                </div>
+                
+                <div class="answer-content">
+                    <p class="answer-loading">Loading...</p>
+                </div>
+            </div>
+            
+            <div class="search-docs">
+                <div class="docs-title">
+                    <i class="iconfont" style="font-size: 24px;color:#000000;">
+                        &#xe8b9;
+                    </i>
+                    <p class="answertitle-text">
+                        <b>Relevant Documents</b>
+                    </p>
+                </div>
+                
+                <div class="docs-content">
+                    <p class="docs-loading">Loading...</p>
+                    <a href="https://www.baidu.com">loading----loading----loading...</a>
+                </div>
+            </div>
+            
+            <div class="search-process">
+                <div class="process-title">
+                    <i class="iconfont" style="font-size: 24px;color:#000000;">
+                        &#xe62a;
+                    </i>
+                    <p class="processtitle-text">
+                        <b>Search Process</b>
+                    </p>
+                </div>
+                
+                <div class="process-content">
+                    Loading...Loading...Loading...Loading...Loading...Loading...Loading...Loading...Loading...Loading...Loading...Loading...Loading...Loading...Loading...Loading...
+                    Q: {{ search_query }}
+                    <br>
+                    {{ qa_prefix }}
+                    <br>
+                    Q: {{ search_query }}
+                    <br>
+                    {{ qa_prefix }}
+                    <br>
+                    Q: {{ search_query }}
+                    <br>
+                    {{ qa_prefix }}
+                    <br>
+                    Q: {{ search_query }}
+                    <br>
+                    {{ qa_prefix }}
+                    <br>
+                    Q: {{ search_query }}
+                    <br>
+                    {{ qa_prefix }}
+                    Q: {{ search_query }}
+                    <br>
+                    {{ qa_prefix }}
+                    <br>
+                    Q: {{ search_query }}
+                    <br>
+                    {{ qa_prefix }}
+                    <br>
+                    Q: {{ search_query }}
+                    <br>
+                    {{ qa_prefix }}
+                </div>
+            </div>
+            
+        </div>
+    
+    </body>
+</html>

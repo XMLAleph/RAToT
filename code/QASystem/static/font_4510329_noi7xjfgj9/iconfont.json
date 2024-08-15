@@ -1,0 +1,79 @@
+{
+  "id": "4510329",
+  "name": "qa sys",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1163334",
+      "name": "搜索",
+      "font_class": "search",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "18163953",
+      "name": "大脑,研判,智慧,思考,联想",
+      "font_class": "mind-full",
+      "unicode": "e850",
+      "unicode_decimal": 59472
+    },
+    {
+      "icon_id": "18165667",
+      "name": "文件,文档,书籍,知识,知识库",
+      "font_class": "knowledge-full",
+      "unicode": "e89d",
+      "unicode_decimal": 59549
+    },
+    {
+      "icon_id": "7155227",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "3978417",
+      "name": "上一页",
+      "font_class": "shangyiye",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "3978433",
+      "name": "下一页",
+      "font_class": "xiayiye",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "1131",
+      "name": "资料库",
+      "font_class": "ziliaoku",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1766276",
+      "name": "操作-搜索",
+      "font_class": "sousuo",
+      "unicode": "e678",
+      "unicode_decimal": 59000
+    },
+    {
+      "icon_id": "5387814",
+      "name": "机器人_o",
+      "font_class": "jiqiren_o",
+      "unicode": "eb62",
+      "unicode_decimal": 60258
+    },
+    {
+      "icon_id": "38419673",
+      "name": "icon-大模型",
+      "font_class": "icon-damoxing",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+body {
+    background: url("/static/img/RUC_2.jpg") no-repeat center center fixed;
+    z-index: 1;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.search-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    height: 40px;
+    border: 10px;
+    border-radius: 40px;
+    padding: 10px;
+    opacity: 0;
+    transition-delay: 99999999s;
+    transition-duration: 1s;
+}
+
+.search-box:hover>.search-txt {
+	width: 240px;
+	padding: 6px;
+}
+
+.search-box:hover>.search-btn {
+	color: white;
+	background: #880000;
+}
+
+.search-btn {
+	transition: 0.5s;
+	font-size: 25px;
+	color: #880000;
+	float: right;
+	width: 40px;
+	height: 40px;	
+	border: 10px;
+	border-radius: 50%;
+	background: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+			
+.search-txt {
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: #880000;
+	font-size: 16px;
+	transition: 0.6s;
+	line-height: 50px;
+	width: 0px;
+}
+
+@keyframes flash {
+	50% {
+		transform: scale(1.5);
+	}
+			
+	80% {
+		transform: rotate(-60deg);
+	}
+			
+	100% {
+		transform: rotate(30deg);
+	}        		        
+}
+
+html:hover .search-box {
+	opacity: 1;
+	transition-delay: 0s;
+	transition-duration: 0s;
+}

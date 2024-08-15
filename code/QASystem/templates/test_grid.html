@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./static/font_4510329_7v0hh5c10hk/iconfont.css">
+        <link rel="stylesheet" href="{{url_for('static', filename = 'css/testgrid.css') }}">
+        <script src="https://cdn.staticfile.net/jquery/3.7.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <title>查询结果-{{ search_query }}</title>
+        <script>
+            function getDocs() {
+                var qid=document.getElementsByClassName("search-queryid-value")[0].value;
+                $.ajax({
+                    url: '/getdoc',
+                    type: 'POST',
+                    data: {'search_query_id':qid},
+                    success: function(response) {
+                        var docsloadingp = document.getElementsByClassName("docs-loading")[0];
+                        docsloadingp.remove();
+                        
+                        for (k = 0, doc_num = response['docs'].length; k < step_num; k++) {
+                            var doca = document.createElement("a");
+                            doca.href = response['docs'][k][2];
+                            doca.innerHTML += '<b>' + response['docs'][k][0] + '</b>' + '<br>';
+                            doca.innerHTML += response['docs'][k][2];
+                            docsbtn.appendChild(doca);
+                            docsbtn.appendChild(document.createElement("br"));
+                            docsbtn.appendChild(document.createElement("br"));
+                        }
+                    },
+                });
+            };
+            
+            function updateData(run_time) {
+                var query=document.getElementsByClassName("search-text")[0].value;
+                var qid=document.getElementsByClassName("search-queryid-value")[0].value;
+                var searchsrc=document.getElementsByClassName("search-source-value")[0].value;
+                var searchgen=document.getElementsByClassName("search-generator-value")[0].value;
+                var searchmd=document.getElementsByClassName("search-mode-value")[0].value;
+                var ansbtn=document.getElementsByClassName("answer-content")[0];
+                var docsbtn=document.getElementsByClassName("docs-content")[0];
+                var processbtn=document.getElementsByClassName("process-content")[0];
+                $.ajax({
+                    url: '/update',
+                    type: 'POST',
+                    data: {'qd_run_time':run_time, 'search_query':query, 'search_query_id':qid, 'search_source':searchsrc, 'search_generator':searchgen, 'search_mode':searchmd},
+                    success: function(response) {
+                        for (i = 0, step_num = response['process_step'].length; i < step_num; i++) { 
+                            processbtn.innerHTML += response['process_step'][i] + '<br>';
+                        }
+                        
+                        processbtn.scrollTop = processbtn.scrollHeight;
+                        
+                        if (response['done'] == 1) {
+                            var ansloadingp = document.getElementsByClassName("answer-loading")[0];
+                            ansloadingp.remove();
+                            
+                            var answerp = document.createElement("p");
+                            answerp.innerText = response['answer'];
+                            answerp.className = "answer-text";
+                            ansbtn.appendChild(answerp);
+                            
+                            var reasonchainp = document.createElement("p");
+                            reasonchainp.innerText = response['reason_chain'];
+                            reasonchainp.className = "reasonchain-text";
+                            ansbtn.appendChild(reasonchainp);
+                            
+                            var docsloadingp = document.getElementsByClassName("docs-loading")[0];
+                            docsloadingp.remove();
+                            
+                            for (j = 0, doc_num = response['docs'].length; j < doc_num; j++) {
+                                var doca = document.createElement("a");
+                                doca.href = response['docs'][j][2];
+                                doca.innerHTML += '<b>' + response['docs'][j][0] + '</b>' + '<br>';
+                                doca.innerHTML += response['docs'][j][2];
+                                docsbtn.appendChild(doca);
+                                docsbtn.appendChild(document.createElement("br"));
+                                docsbtn.appendChild(document.createElement("br"));
+                            }
+                        }
+                        else if (response['done'] == 0) {
+                            updateData(run_time+1);
+                        }
+                        else {
+                            var ansloadingp = document.getElementsByClassName("answer-loading")[0];
+                            ansloadingp.remove();
+                            
+                            var answerp = document.createElement("p");
+                            answerp.innerText = "I dont't know... :(";
+                            answerp.className = "answer-text";
+                            ansbtn.appendChild(answerp);
+                            
+                            getDocs();
+                            
+                            alert("异常结束");
+                        }
+                    },
+                });
+            };
+            
+            $(function() {
+                updateData(1);
+            });
+        </script>
+    </head>
+    <body class="bod2">
+        <div class="searchsourceicon-respage" style="text-align:center;">
+            <i class="iconfont" style="font-size: 20px;color:#ffffff;">
+                &#xe89d;
+            </i>
+        </div>
+
+        <div class="llmgeneratoricon-respage" style="text-align:center;">
+            <i class="iconfont" style="font-size: 24px;color:#ffffff;">
+                &#xeb62;
+            </i>
+        </div>
+
+        <div class="modeicon-respage" style="text-align:center;">
+            <i class="iconfont" style="font-size: 18px;color:#ffffff;">
+                &#xe652;
+            </i>
+        </div>
+
+        <div class="sys-configs-respage">
+            <select class="searchsource-respage" name="menu4searchsource" id="menu4setting1" form="box4search-respage">
+                <option value="local_hotpotqa" disabled>wikipedia-HotpotQA</option>
+                <option value="local_2wikimultihopqa">wikipedia-2WikiMQA</option>
+                <option value="local_musique">wikipedia-MuSiQue</option>
+                <option value="web_google" selected>Google</option>
+                <option value="web_bing">Bing</option>
+            </select>
+
+            <select class="llmgenerator-respage" name="menu4llmgenerator" id="menu4setting2" form="box4search-respage">
+                <option value="gpt-3.5-turbo-instruct" selected>gpt-3.5-turbo-instruct</option>
+            </select>
+
+            <select class="mode-respage" name="menu4mode" id="menu4setting3" form="box4search-respage">
+                <option value="ircot" selected>IRCoT</option>
+                <option value="scircot">Sc-IRCoT</option>
+                <option value="ragot">RAGoT</option>
+            </select>
+        </div>
+
+        <select class="new-queryid" name="id4query" id="id4verify1" form="box4search-respage">
+            <option value="{{ temp_id }}" selected>temp_id</option>
+        </select>
+        
+        <button class="search-queryid-value" value="{{ query_id }}">
+        </button>
+        
+        <button class="search-source-value" value="{{ search_source }}">
+        </button>
+        
+        <button class="search-generator-value" value="{{ search_generator }}">
+        </button>
+        
+        <button class="search-mode-value" value="{{ search_mode }}">
+        </button>
+        
+        <form class="example" id="box4search-respage" action="{{ url_for('search') }}" method="get">
+            <div class="search-box">
+                <input class="search-text" name="inputs" value="{{ search_query }}">
+          <button type="submit" class="search-btn" id="btn">
+                	<i class="iconfont" style="font-size: 25px">&#xeb62;</i>
+                </button>
+            </div>
+        </form>
+        
+        <div class="search-results">
+            <div class="search-answer">
+                <div class="answer-title">
+                    <i class="iconfont" style="font-size: 24px;color:#000000;">
+                        &#xe805;
+                    </i>
+                    <p class="answertitle-text">
+                        <b>Query Answer</b>
+                    </p>
+                </div>
+                
+                <div class="answer-content">
+                    <p class="answer-loading">Loading...</p>
+                </div>
+            </div>
+            
+            <div class="search-docs">
+                <div class="docs-title">
+                    <i class="iconfont" style="font-size: 24px;color:#000000;">
+                        &#xe8b9;
+                    </i>
+                    <p class="answertitle-text">
+                        <b>Relevant Documents</b>
+                    </p>
+                </div>
+                
+                <div class="docs-content">
+                    <p class="docs-loading">Loading...</p>
+                </div>
+            </div>
+            
+            <div class="search-process">
+                <div class="process-title">
+                    <i class="iconfont" style="font-size: 24px;color:#000000;">
+                        &#xe62a;
+                    </i>
+                    <p class="processtitle-text">
+                        <b>Search Process</b>
+                    </p>
+                </div>
+                
+                <div class="process-content">
+                    Q: {{ search_query }}
+                    <br>
+                    {{ qa_prefix }}
+                    <br>
+                </div>
+            </div>
+            
+        </div>
+    
+    </body>
+</html>

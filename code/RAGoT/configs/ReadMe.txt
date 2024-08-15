@@ -1,0 +1,4 @@
+3.25修改：
+	ragot_qa_gpt_3的多个配置中，目前选择distractor=2为主要配置
+	prompt_1对应的是一开始设计的vote prompt，现在文件名称是llm_vote_1；prompt_2对应的是新设计的prompt，文件名称llm_vote_2。generator的prompt都是相同的
+	改：prompt set 1对应的是generator的prompt，vote prompt是固定的

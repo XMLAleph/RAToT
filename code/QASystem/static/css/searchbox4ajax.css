@@ -1,0 +1,88 @@
+.searchsourceicon-respage {
+    display: inline-block;
+    position: absolute;
+	top: 15.5%;
+	left: 11%;
+}
+
+.llmgeneratoricon-respage {
+    display: inline-block;
+    position: absolute;
+	top: 15.2%;
+	left: 25.6%;
+}
+
+.modeicon-respage {
+    display: inline-block;
+    position: absolute;
+	top: 15.6%;
+	left: 40.8%;
+}
+
+.sys-configs-respage {
+    position: absolute;
+    top: 16%;
+    left: 13%;
+}
+
+.searchsource-respage {
+    font-size: 12px;
+    border-radius: 20px;
+    border: 0px;
+    display: inline-block;
+    margin-right: 90px;
+}
+
+.llmgenerator-respage {
+    font-size: 12px;
+    border-radius: 20px;
+    border: 0px;
+    display: inline-block;
+    margin-right: 90px;
+}
+
+.mode-respage {
+    font-size: 12px;
+    border-radius: 20px;
+    border: 0px;
+    display: inline-block;
+}
+
+.queryid {
+    display: none;
+}
+
+.search-box {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search-btn {
+    float: right;
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+	background: linear-gradient(to left, #fccb90, #d57eeb);
+}
+
+.search-text {
+    width: 800px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding-left: 20px;
+    color: black;
+    font-size: 18px;
+    font-family: "Microsoft YaHei UI Light";
+}

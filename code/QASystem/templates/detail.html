@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename = 'css/detail.css') }}">
+        <title>内容详情-{{ title }}</title>
+    </head>
+    
+    <body class="bod3">
+        
+            <span class="corpus">
+                {{ corpus }}
+            </span>
+            
+            <span class="title">
+                {{ title }}
+            </span>
+            
+            <div class="para">
+                <p class="para-content">{{ para }}</p>
+            </div>
+        
+	</body>
+    
+</html>
